@@ -1,0 +1,58 @@
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.auth-logo {
+  img {
+    max-width: 90%;
+    width: 200px;
+  }
+}
+
+.auth-inner {
+  background: $white;
+  padding: 40px 20px;
+  width: 350px;
+
+  svg {
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+  }
+
+  form {
+    margin-top: 40px;
+  }
+
+  button {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .errors {
+    color: $red;
+    margin-top: 15px;
+    text-align: center;
+  }
+}
+
+.auth-nav {
+  color: $primary-color;
+  margin-top: 50px;
+  font-size: 14px;
+  padding-left: 10px;
+  text-align: center;
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

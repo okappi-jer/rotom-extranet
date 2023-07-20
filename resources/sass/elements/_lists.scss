@@ -1,0 +1,152 @@
+.blank-list {
+  list-style-type: none;
+  padding: 0; margin: 0;
+}
+
+.category-list {
+  @extend .blank-list;
+
+  li {
+    display: inline-block;
+
+    &:last-child {
+      span {display: none;}
+    }
+  }
+  a {
+    color: #999;
+    font-size: 14px;
+    transition: color .2s ease;
+
+    &:hover   {color: $secondary-color;}
+  }
+}
+
+.tag-list {
+  @extend .blank-list;
+  margin-top: 10px;
+
+  li {
+    display: inline-block;
+    margin-right: 5px;
+
+    &:last-child {margin-right: 0;}
+  }
+
+  a {
+    padding: 9px 15px;
+    border-radius: 3px;
+    display: inline-block;
+    color: #999;
+    font-size: 12px;
+    background-color: rgba(0,0,0,.15);
+    transform: color .2s ease;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+.faq-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  
+  li  {
+    background: $secondary-color;
+    position: relative;
+  }
+
+  .cover {
+    background-size: cover;
+    background-position: center;
+    height: 220px;
+    position: relative;
+
+    span.type {
+      background: $primary-color;
+      color: $white;
+      position: absolute;
+      top: 0; right: 0;
+      padding: 5px;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+  }
+
+  a:hover {
+    display: block;
+
+    span.fake-btn {
+      color: $white;
+    }
+  }
+
+  .info {
+    padding: 16px 32px;
+    color: $white;
+    padding-bottom: 65px;
+  }
+
+  strong {
+    line-height: 26px;
+    font-size: 18px;
+    text-align: center;
+    display: block;
+  }
+
+  span.fake-btn {
+    position: absolute;
+    right: 32px; bottom: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: lowercase;
+    color: $primary-color;
+    transition: all .2s ease;
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 16px;
+      margin-left: 10px;
+    }
+  }
+
+  @media (max-width: 780px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.type-list {
+  margin: 0; padding: 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    margin-bottom: 10px;
+
+    &:last-child {margin-bottom: 0;}
+  }
+
+  .label {
+    color: #646464;
+    width: 75px;
+  }
+  .cloud {
+    display: inline-block;
+    background-color: #dfe8eb;
+    color: $secondary-color;
+    text-decoration: none;
+    transition: all .2s ease;
+    padding: 4px 8px;
+    border-radius: 2px;
+    margin-right: 5px;
+
+    &.dark {
+      background: $secondary-color;
+      color: $white;
+    }
+  }
+}

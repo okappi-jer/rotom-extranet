@@ -1,0 +1,107 @@
+.product-lines {
+
+    .table-labels {
+        display: none;
+
+        @media (min-width: 768px) {
+            display: grid;
+            grid: auto / repeat(5, 1fr) 80px 50px;
+        }
+
+        span {
+            padding: 10px;
+            font-weight: bold;
+        }
+    }
+
+    .product-line {
+        text-align: center;
+
+        &:nth-of-type(even) {
+            background-color: #e6e6e6;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+
+            @media (min-width: 768px) {
+                display: none;
+            }
+        }
+
+        input {
+            text-align: center;
+        }
+
+        svg {
+            cursor: pointer;
+            max-width: 30px;
+        }
+
+        >div {
+            padding: 10px;
+            line-height: 1.1em;
+
+            span {
+                font-size: .9em;
+            }
+
+            &+div {
+                border-top: 1px solid lightgrey;
+
+                @media (min-width: 768px) {
+                    border-top: none;
+                }
+            }
+
+            @media (min-width: 768px) {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .order-nr {
+
+            span {
+                display: flex;
+                flex-direction: column;
+
+                small {
+                    padding-top: 4px;
+                    position: relative;
+                    top: 5px;
+                    font-size: .9em;
+
+                    @media (min-width: 768px) {
+                        border-top: 1px dashed $black;
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 768px) {
+            display: grid;
+            grid: auto / repeat(5, 1fr) 80px 50px;
+            text-align: left;
+        }
+
+        .success-message {
+            text-align: center;
+            grid-column-start: 1;
+            grid-column-end: 7;
+            color: $green;
+        }
+
+        .error-message {
+            text-align: center;
+            grid-column-start: 1;
+            grid-column-end: 7;
+            color: $red;
+        }
+    }
+
+    .no-search-results {
+        color: $red;
+    }
+}

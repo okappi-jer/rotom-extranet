@@ -1,0 +1,102 @@
+.filter-banner {
+  margin-bottom: 25px;
+
+  .view-options {
+    @extend .blank-list;
+
+    li {
+      display: inline-block;
+      margin-right: 5px;
+      &:last-child {margin-right: 0;}
+    }
+
+    .swap-view {
+      opacity: .5;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+        color: $primary-color;
+      }
+      &.current   {opacity: 1;}
+    }
+  }
+}
+
+.notification-error{
+  background-color: $lightred;
+  color: $primary-color;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.notification-success{
+  background-color: $lightgreen;
+  color: $green;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.modal--popup {
+  position: fixed;
+  display: block;
+  top: 0; right: 0;
+  bottom: 0; left: 0;
+  z-index: 400;
+  background: rgba(0,0,0,0.5);
+
+  .inner {
+    width: 80%;
+    max-width: 700px;
+    position: absolute;
+    padding: 35px;
+    background: $white;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    overflow-y: scroll;
+    max-height: 80vh;
+  }
+
+  h2 {
+    font-size: 22px;
+    margin-bottom: 25px;
+    color: $secondary-color;
+    text-align: center;
+  }
+  label {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  .disabled {background: $grey}
+}
+
+
+.pagination {
+  margin-top: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .page-numbers {
+    color: $secondary-color;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: color .2s ease;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  .current {
+    color: $primary-color;
+  }
+}
+
+.go-back-banner {
+  overflow: hidden;
+
+  .btn-close-text {float: right;}
+}

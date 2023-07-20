@@ -1,0 +1,37 @@
+// Fonts
+//@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
+@import url("https://use.typekit.net/kvq4ray.css");
+
+// WYSIWYG
+@import "~vue-wysiwyg/dist/vueWysiwyg.css";
+
+/* base */
+@import 'base/reset';
+@import 'base/variables';
+@import 'base/fonts';
+@import 'base/utilities';
+
+/* elements */
+@import 'elements/components';
+@import 'elements/header';
+@import 'elements/sidebar';
+@import 'elements/breadcrumbs';
+@import 'elements/footer';
+@import 'elements/buttons';
+@import 'elements/modals';
+@import 'elements/lists';
+@import 'elements/cards';
+@import 'elements/forms';
+@import "elements/blocks";
+@import "elements/table";
+@import "elements/panels";
+@import 'elements/search';
+@import 'elements/product-line';
+@import 'elements/product-line-selected';
+@import 'elements/info';
+@import 'elements/serial-number-select-item';
+
+/* layouts */
+@import 'layouts/global';
+@import 'layouts/auth';
+@import 'layouts/dashboard';

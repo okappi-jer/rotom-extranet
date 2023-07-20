@@ -1,0 +1,29 @@
+.blog-slider {
+  width: 100%;
+
+  .slick-next {
+    right: 25px;
+    z-index: 10;
+  }
+  .slick-prev {
+    left: 25px;
+    z-index: 10;
+  }
+
+  .blog-cover-slide {
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    outline: none;
+
+    &:after {
+      content: '';
+      float: left;
+      padding-top: 50%;
+    }
+  }
+}
+
+.blog-content {
+  padding: 25px;
+}

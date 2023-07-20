@@ -1,0 +1,29 @@
+p.info {
+    font-size: .9em;
+    color: $light-blue;
+    font-style: italic;
+
+    svg {
+        width: 18px;
+        margin-right: 5px;
+        position: relative;
+        top: 4px;
+    }
+
+    a {
+
+        svg {
+            width: 15px;
+            top: 3px;
+            left: 0;
+            transition: all .3s ease;
+        }
+
+        &:hover {
+
+            svg {
+                left: 5px;
+            }
+        }
+    }
+}

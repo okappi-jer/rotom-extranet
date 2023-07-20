@@ -1,0 +1,158 @@
+.footer-subscribe {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: $white;
+  padding: 35px 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+    padding: 0 100px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .info {
+    flex: 1;
+    padding-right: 50px;
+  }
+
+  @media (max-width: 980px) {
+    .container {
+      padding: 0 50px;
+    }
+  }
+
+  @media (max-width: 780px) {
+    .container {
+      padding: 0 15px;
+      flex-direction: column;
+    }
+
+    .info   {padding-right: 0;}
+
+    .cta {
+      text-align: center;
+      margin-top: 25px;
+    }
+  }
+}
+
+footer {
+  background: $secondary-color;
+  color: $white;
+  padding: 50px 0;
+
+  .container  {display: flex;}
+
+  .logo-white {display: block;}
+  .logo-color {display: none !important;}
+
+  a, p {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 300;
+    color: $white;
+  }
+
+  @media (max-width: 780px) {
+    .container {
+      flex-direction: column;
+    }
+  }
+}
+
+.footer-info {
+  width: 20%;
+  padding-right: 20px;
+
+  a {
+    display: inline-block;
+
+    img   {max-width: 90%;}
+  }
+
+  @media (max-width: 980px) {
+    padding-right: 0;
+  }
+  @media (max-width: 780px) {
+    width: 100%;
+    text-align: center;
+
+    a img {
+      max-width: 125px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.footer-menus {
+  padding: 0 30px;
+  width: 60%;
+  display: flex;
+
+  .menu-col {
+    flex: 1;
+    padding: 10px 20px;
+  }
+
+  h4 {font-weight: 400;}
+  
+  .footer-menu-list {
+    list-style-type: none;
+    padding: 0; margin: 0;
+
+    li {
+      margin-top: 5px;
+
+      p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 26px;
+        font-weight: 300;
+        color: #ffffff;
+      }
+    }
+  }
+
+  @media (max-width: 980px) {
+    .menu-col {
+      padding: 10px;
+    }
+  }
+  @media (max-width: 780px) {
+    width: 100%;
+    text-align: center;
+
+    .menu-col {
+      display: none;
+
+      &:last-child {
+        display: block;
+      }
+    }
+  }
+}
+
+.footer-account {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .social-links {
+    margin-top: auto;
+    text-align: center;
+    width: 100%;
+  }
+
+  @media (max-width: 780px) {
+    width: 100%;
+    margin-top: 25px;
+
+    .social-links {
+      margin-top: 25px;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+.view--dashboard {
+  .quick--actions {
+    display: grid;
+    grid: auto / 1fr;
+    gap: 5px;
+    font-size: 15px;
+
+    @media (min-width: 768px) {
+      grid: auto / 1fr 1fr 1fr;
+      gap: 15px;
+    }
+  }
+
+  .status-panel {
+    text-align: center;
+    padding: 25px 45px;
+    background: $background-light;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-bottom: 15px;
+    transition: all .5s ease-in-out;
+
+    a{
+      color: $secondary-color;
+    }
+
+    &:hover{
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 780px) {
+      flex-direction: column;
+      padding: 15px 25px;
+    }
+
+    span.big {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+
+      svg {
+        margin-right: 10px;
+        height: 30px;
+        width: 30px;
+      }
+    }
+
+    &.attention{
+      background-color: $lightred;
+      box-shadow: rgba(216, 102, 110, 1) 0px 2px 8px 0px;
+
+    }
+  }
+}
+
+.two-cols {
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+
+  .single-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 780px) {
+    display: flex;
+    flex-direction: column;
+  }
+}

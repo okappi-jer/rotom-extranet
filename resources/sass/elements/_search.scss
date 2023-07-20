@@ -1,0 +1,29 @@
+.search {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    label {
+        margin-bottom: 0;
+    }
+
+    input {
+        flex-grow: 1;
+        margin-left: 10px;
+    }
+
+    svg {
+        width: 20px;
+        position: absolute;
+        right: 11px;
+        background: $white;
+        cursor: pointer;
+
+        &.search-icon {
+            width: 39px;
+            right: 1px;
+            background: $red;
+            padding: 10px;
+        }
+    }
+}

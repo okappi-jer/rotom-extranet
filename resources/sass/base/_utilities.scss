@@ -1,0 +1,45 @@
+.padded {
+  padding: 100px 0;
+
+  @media (max-width: 780px) {
+    padding: 50px 0;
+  }
+}
+
+.block            {display: block;}
+.flex             {display: flex;}
+.nopadding        {padding: 0 !important;}
+
+.text-right       {text-align: right;}
+.text-left        {text-align: left;}
+.text-center      {text-align: center;}
+
+.justify-right    {justify-content: flex-start;}
+.justify-left     {justify-content: flex-end;}
+.justify-center   {justify-content: center;}
+
+.align-top        {align-items: flex-start;}
+.align-bottom     {align-items: flex-end;}
+.align-center     {align-items: center;}
+
+.flex-column      {flex-direction: column;width:100%;}
+.flex-align-center      {align-items: center;}
+.flex-width-50    {flex: 50%;}
+
+.filter {
+  position: absolute;
+  display: block;
+  top: 0; right: 0;
+  bottom: 0; left: 0;
+  z-index: 1;
+
+  &-blue        {background: $secondary-color;}
+  &-light-blue  {background: $light-blue;}
+  &-red         {background: $primary-color;}
+}
+
+@for $i from 1 through 100 {
+  .filter-#{$i} {
+    opacity: unquote("calc( #{$i} / 100 )");;
+  }
+}

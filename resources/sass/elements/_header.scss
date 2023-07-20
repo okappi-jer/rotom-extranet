@@ -1,0 +1,101 @@
+header {
+  background: $white;
+  color: $secondary-color;
+  padding: 10px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 300;
+  top: 0; left: 0;
+  width: 100%;
+  height: 65px;
+
+  @media (max-width: 980px) {
+    padding: 0 25px;
+    height: 50px;
+  }
+  @media (max-width: 780px) {
+    padding: 0 20px;
+  }
+}
+
+.app-branding {
+  img {max-width: 100px;}
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+
+  a {
+    color: $secondary-color;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  strong {font-weight: 700;}
+
+  @media (max-width: 980px) {
+    .info     {display: none;}
+  }
+}
+
+.res-icon {
+  display: none;
+
+  @media (max-width: 980px) {
+    display: block;
+    width: 25px; height: 18px;
+    position: relative;
+    cursor: pointer;
+
+    span {
+      position: absolute;
+      display: block;
+      width: 100%; height: 3px;
+      background: $secondary-color;
+      transition: all .2s ease;
+
+      &:nth-child(1) {top: 0;}
+      &:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &:nth-child(3) {
+        top: 100%;
+        transform: translateY(-100%);
+      }
+    }
+
+    &.active {
+      span {
+        background: $primary-color;
+        &:nth-child(1) {
+          top: 50%;
+          transform: translateY(-50%) rotate(45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          top: 50%;
+          transform: translateY(-50%) rotate(-45deg);
+        }
+      }
+    }
+  }
+}
+
+.loading-indicator {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  padding: 5px 25px;
+  font-size: 14px;
+  background: $red;
+  color: $white;
+}

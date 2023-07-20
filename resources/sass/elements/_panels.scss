@@ -1,0 +1,41 @@
+strong.panel-label {
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  color: $secondary-color;
+  margin-bottom: 15px;
+  padding: 0 10px;
+
+  svg {
+    margin-right: 10px;
+    width: 15px;
+  }
+}
+
+.panel {
+  margin-bottom: 15px;
+  padding: 25px;
+  background: $white;
+  border-radius: 5px;
+
+  p:last-child  {margin: 0;}
+
+  ul{
+    margin-top: 5px;
+    padding-left: 25px;
+    list-style-type: circle;
+  }
+
+  .p-10{
+    padding: 0 10px;
+  }
+
+  .mt-20{
+    margin-top: 20px;
+  }
+
+  @media (max-width: 780px) {
+    padding: 20px 10px;
+  }
+}

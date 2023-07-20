@@ -1,0 +1,27 @@
+/* -- Fonts ---------- */
+$ff-base:     'museo-sans', sans-serif; // 300 - 400 - 400italic - 700 - 900
+$ff-base-2:   'museo-sans', sans-serif;
+
+/* -- Colors ---------- */
+$primary-color:     #be000e;
+$secondary-color:   #000000;
+
+$background:        #F2F5F8; // rgb(242,245,248)
+$background-light:  #f8f9fb;
+$grey:              #999999;
+
+$white:             #ffffff;
+$black:             #000000;
+$orange:            #f29204;
+$light-blue:        #38A3FA;
+$green:             #03A678;
+$lightgreen:        #04e0a2;
+$red:               #be000e;
+$lightred:          #d8666e;
+$link-color:        $primary-color;
+
+/* -- Distances ---------- */
+$dist-xs:           8px;
+$dist-s:            16px;
+$dist-m:            32px;
+$dist-l:            64px;
