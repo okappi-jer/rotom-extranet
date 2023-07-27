@@ -65,6 +65,12 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
         ],
 
+        'excel' => [
+            'driver' => 'local',
+            'root' => public_path('partijreg/exports'),
+            'visibility' => 'public',
+        ],
+
     ],
 
     /*

@@ -19,6 +19,17 @@
       <form class="comment-form" @submit.prevent="handleSubmit">
         <div class="form-group-wrapper">
           <div class="form-group half">
+            <label for="delivers_to">Levert aan:</label>
+            <input  class="read-only" readonly type="text" id="delivers_to" v-model="newUser.delivers_to" placeholder="Levert aan" />
+          </div>
+          <div class="form-group half">
+            <label for="company">Bedrijf:</label>
+            <input type="text" id="company" v-model="newUser.company" placeholder="Bedrijfsnaam" />
+          </div>
+        </div>
+
+        <div class="form-group-wrapper">
+          <div class="form-group half">
             <label for="naam">Naam</label>
             <input type="text" id="naam" v-model="newUser.name" placeholder="Naam" />
           </div>
@@ -42,8 +53,8 @@
 
         <div class="form-group-wrapper">
           <div class="form-group half">
-            <label for="voornaam">Functie</label>
-            <select class="read-only" name="functie" id="role" v-model="newUser.role" readonly>
+            <label for="role">Functie</label>
+            <select class="read-only" name="role" id="role" v-model="newUser.role" readonly>
               <option :value="newUser.role">{{ newUser.role }}</option>
             </select>
           </div>
@@ -145,6 +156,8 @@ export default {
       this.newUser.email = this.contact.email;
       this.newUser.supplier_code = this.contact.supplier_code;
       this.newUser.role = this.contact.role;
+      this.newUser.company = this.contact.company;
+      this.newUser.delivers_to = this.contact.delivers_to;
 
       if(this.contact.id !== this.$store.state.authStore.user.id){
         this.canDelete = true;

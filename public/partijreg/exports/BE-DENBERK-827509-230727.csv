@@ -1,0 +1,3 @@
+"ID","UniqueId","SupplierCode","UserId","UserName","BTPLArticleCode","BTPLTekst","BTPLVerpakkingsCode","BTPLKaliber","BTPLOrderDeliveryDate","BTPLOrderDeliveryAt","BTPLArticleRemark","BTPLOrderReference","BTPLArticleCollie","BTPLArticleWeight","CreatedAt","UpdatedAt"
+"7","BE-DENBERK-827509-230727","BE-DENBERK","1","Jeroen Bartels","","Pallet EUR 80x120","PEUR","","2023-07-28","Rotom","","Testref","4","0","2023-07-27T09:56:23.000000Z","2023-07-27T09:56:23.000000Z"
+"8","BE-DENBERK-827509-230727","BE-DENBERK","1","Jeroen Bartels","0G0000","Tomaat Snack 4KG Doos Verloren","DVER","DVER4","2023-07-28","Rotom","Allemaal rot","Testref","100","0","2023-07-27T09:56:23.000000Z","2023-07-27T09:56:23.000000Z"

@@ -37,5 +37,11 @@ Route::middleware('auth:api')->group(function () {
 
     Route::get('borderels', 'PartijregController@getBorderels');
     Route::get('loten', 'PartijregController@getLoten');
+    Route::get('templates', 'PartijregController@getTemplates');
+
+    Route::post('delivery/store', 'PartijregController@storeDelivery');
+    Route::get('delivery/all', 'DeliveryController@index');
+    Route::get('delivery/{id}', 'DeliveryController@show');
 });
+
 

@@ -1,10 +1,10 @@
 <template>
-  <div
-    class="auth-container"
-    style="background-image: url('./images/background.jpeg')"
-  >
+  <div class="auth-container" :style="{ 'background-image': 'url(' + backgroundUrl + ')' }">
     <div class="auth-inner">
-      <div class="auth-logo text-center">
+      <div class="auth-logo text-center" v-if="$route.query.deliver_at == 'orca'">
+        <LogoOrca />
+      </div>
+      <div class="auth-logo text-center" v-else>
         <Logo />
       </div>
 
@@ -102,22 +102,31 @@
 
 <script>
 import Logo from "../../components/Logo";
+import LogoOrca from "../../components/LogoOrca";
+
 import { LOGIN_USER } from "../../constants";
 
 export default {
   name: "Login",
   components: {
     Logo,
+    LogoOrca,
   },
   mounted() {
     if (localStorage.getItem("key")) {
       this.$router.push("/dashboard");
     }
+
     this.csrfToken = window.Laravel.csrfToken;
+
+    if(this.$route.query.deliver_at == 'orca'){
+      this.backgroundUrl = './images/background-orca.jpeg'
+    }
   },
   data() {
     return {
       csrfToken: null,
+      backgroundUrl: './images/background.jpeg',
       loginData: {
         email: "",
         password: "",

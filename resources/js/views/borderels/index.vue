@@ -42,7 +42,6 @@
 <script>
   import { VueGoodTable } from 'vue-good-table';
   import axios from "axios";
-  import {GET_CONTACTS, IS_LOADING} from "../../constants";
 
   const api_url = process.env.MIX_API_URL;
 

@@ -14,6 +14,8 @@ const ContactenCreate = () => import('./views/contacten/create.vue');
 const ContactenEdit = () => import('./views/contacten/edit.vue');
 
 const Delivery = () => import('./views/delivery/index.vue');
+const DeliveryOverview = () => import('./views/delivery/overview.vue');
+const DeliveryDetail = () => import('./views/delivery/detail.vue');
 
 const History = () => import('./views/history/index.vue');
 
@@ -33,9 +35,11 @@ const routes = [
   { path: '/users/create',        name: 'ContactenCreate', component: ContactenCreate, meta: { requiresLogin: true } },
   { path: '/users/edit/:id',      name: 'ContactenEdit', component: ContactenEdit, meta: { requiresLogin: true } },
 
-  { path: '/history',               name: 'Contacten', component: History, meta: { requiresLogin: true } },
+  { path: '/history',               name: 'History', component: History, meta: { requiresLogin: true } },
 
-  { path: '/delivery',               name: 'Contacten', component: Delivery, meta: { requiresLogin: true } },
+  { path: '/delivery',               name: 'Delivery', component: Delivery, meta: { requiresLogin: true } },
+  { path: '/delivery/overview',      name: 'DeliveryOverview', component: DeliveryOverview, meta: { requiresLogin: true } },
+  { path: '/delivery/:id',          name: 'DeliveryDetail', component: DeliveryDetail, meta: { requiresLogin: true } },
 
   { path: '/borderels',               name: 'Contacten', component: Borderels, meta: { requiresLogin: true } },
 

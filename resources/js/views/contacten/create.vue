@@ -15,6 +15,20 @@
       <form class="comment-form" @submit.prevent="handleSubmit">
         <div class="form-group-wrapper">
           <div class="form-group half">
+            <label for="delivers_to">Levert aan:</label>
+            <select name="delivers_to" id="delivers_to" v-model="newUser.delivers_to">
+              <option value="Rotom">Rotom</option>
+              <option value="Orca">Orca</option>
+            </select>
+          </div>
+          <div class="form-group half">
+            <label for="company">Bedrijf:</label>
+            <input type="text" id="company" v-model="newUser.company" placeholder="Bedrijfsnaam" />
+          </div>
+        </div>
+
+        <div class="form-group-wrapper">
+          <div class="form-group half">
             <label for="naam">Naam</label>
             <input type="text" id="naam" v-model="newUser.name" placeholder="Naam" />
           </div>
@@ -38,8 +52,8 @@
 
         <div class="form-group-wrapper">
           <div class="form-group half">
-            <label for="voornaam">Functie</label>
-            <select name="functie" id="role" v-model="newUser.role">
+            <label for="role">Functie</label>
+            <select name="role" id="role" v-model="newUser.role">
               <option value="User">User</option>
               <option value="Admin">Admin</option>
             </select>
@@ -74,6 +88,8 @@ export default {
         supplier_code: '',
         password: '',
         role: 'User',
+        company: '',
+        delivers_to: ''
       },
       errorMessage: null,
       error: false,
@@ -82,6 +98,8 @@ export default {
   methods: {
     handleSubmit() {
       let formData = new FormData();
+      formData.append('company', this.newUser.company);
+      formData.append('delivers_to', this.newUser.delivers_to);
       formData.append('name', this.newUser.name);
       formData.append('firstname', this.newUser.firstname);
       formData.append('email', this.newUser.email);

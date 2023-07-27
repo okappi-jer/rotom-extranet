@@ -1,6 +1,10 @@
 <template>
     <header v-if="user">
-        <router-link to="/" class="app-branding">
+        <router-link to="/" class="app-branding" v-if="user.delivers_to == 'Orca'">
+            <LogoOrca />
+        </router-link>
+
+        <router-link to="/" class="app-branding" v-else>
             <Logo />
         </router-link>
 
@@ -24,12 +28,14 @@
 
 <script>
   import Logo from './Logo';
+  import LogoOrca from './LogoOrca';
   import { IS_MENU_OPEN } from '../constants';
 
   export default {
     name: 'HeaderComponent',
     components: {
       Logo,
+      LogoOrca
     },
     data() {
       return {

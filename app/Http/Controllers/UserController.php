@@ -38,6 +38,8 @@ class UserController extends Controller
             'role' => ['required', 'max: 256'],
             'supplier_code' => ['required', 'max: 256'],
             'password' => ['required', 'max: 256'],
+            'company'=> ['required', 'max: 256'],
+            'delivers_to'=> ['required', 'max: 256'],
         ]);
 
         $user =  User::create([
@@ -47,7 +49,9 @@ class UserController extends Controller
             'role' => $request['role'],
             'password' => Hash::make($request['password']),
             'password_plain' => $request['password'],
-            'supplier_code' => $request['supplier_code']
+            'supplier_code' => $request['supplier_code'],
+            'company' => $request['company'],
+            'delivers_to' => $request['delivers_to'],
         ]);
 
         //Create user in Laravel
@@ -82,12 +86,14 @@ class UserController extends Controller
                     'name' => ['required', 'max: 256'],
                     'firstname' => ['required', 'max: 256'],
                     'supplier_code' => ['required', 'max: 256'],
+                    'company'=> ['required', 'max: 256'],
                 ]);
 
                 $user->update([
                     'name' => $request['name'],
                     'firstname' => $request['firstname'],
-                    'supplier_code' => $request['supplier_code']
+                    'supplier_code' => $request['supplier_code'],
+                    'company' => $request['company'],
                 ]);
             }else{
                 $request->validate([
@@ -95,6 +101,7 @@ class UserController extends Controller
                     'firstname' => 'required',
                     'supplier_code' => ['required', 'max: 256'],
                     'password' => ['required', 'max: 256'],
+                    'company' => $request['company'],
                 ]);
 
                 $user->update([
@@ -102,7 +109,8 @@ class UserController extends Controller
                     'firstname' => $request['firstname'],
                     'password' => Hash::make($request['password']),
                     'password_plain' => $request['password'],
-                    'supplier_code' => $request['supplier_code']
+                    'supplier_code' => $request['supplier_code'],
+                    'company' => $request['company'],
                 ]);
             }
 

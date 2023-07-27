@@ -1,0 +1,3 @@
+"ID","UniqueId","SupplierCode","UserId","UserName","BTPLArticleCode","BTPLTekst","BTPLVerpakkingsCode","BTPLKaliber","BTPLOrderDeliveryDate","BTPLOrderDeliveryAt","BTPLArticleRemark","BTPLOrderReference","BTPLArticleCollie","BTPLArticleWeight","CreatedAt","UpdatedAt"
+"11","BE-DENBERK-758018-230727","BE-DENBERK","1","Jeroen Bartels","0G0000","Tomaat Snack 6X500GR Doos Lidl 40x30x14","L144","LB6X50","2023-07-27","Rotom","Nog rotter dan de andere","Test","80","0","2023-07-27T10:03:10.000000Z","2023-07-27T10:03:10.000000Z"
+"12","BE-DENBERK-758018-230727","BE-DENBERK","1","Jeroen Bartels","","Pallet EUR 80x120","PEUR","","2023-07-27","Rotom","","Test","1","0","2023-07-27T10:03:10.000000Z","2023-07-27T10:03:10.000000Z"

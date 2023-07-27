@@ -2,7 +2,7 @@ input,
 textarea,
 select {
   font-family: $ff-base;
-  border-radius: 0;
+  border-radius: 5px;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #F2F5F8;
@@ -175,6 +175,32 @@ form {
 button {
   border: none;
   appearance: none;
+}
+
+.template-form{
+
+  label{
+    padding-left: 10px;
+    font-weight: bold;
+  }
+
+  .highlighted{
+    background-color: $lightgreen;
+    padding: 10px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+  }
+
+  .form-group-wrapper .delivery-input,
+  .form-group-label-wrapper
+  {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-gap: 5px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+  }
 }
 
 .comment-form {
