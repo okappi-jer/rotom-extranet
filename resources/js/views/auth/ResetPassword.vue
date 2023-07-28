@@ -1,7 +1,10 @@
 <template>
-  <div class="auth-container" style="background-image: url('./images/background.jpeg')">
+  <div class="auth-container" :style="{ 'background-image': 'url(' + backgroundUrl + ')' }">
     <div class="auth-inner">
-      <div class="auth-logo text-center">
+      <div class="auth-logo text-center" v-if="$route.query.deliver_at == 'orca'">
+        <LogoOrca />
+      </div>
+      <div class="auth-logo text-center" v-else>
         <Logo />
       </div>
 
@@ -28,7 +31,8 @@
       </form>
 
       <div class="auth-nav">
-        <router-link to="/login">Aanmelden</router-link>
+        <router-link v-if="$route.query.deliver_at == 'orca'" to="/login?deliver_at=orca">Aanmelden</router-link>
+        <router-link v-else to="/login">Aanmelden</router-link>
       </div>
     </div>
   </div>
@@ -36,6 +40,8 @@
 
 <script>
 import Logo from '../../components/Logo';
+import LogoOrca from '../../components/LogoOrca';
+
 import { LOGIN_USER } from '../../constants';
 
 const api_url = process.env.MIX_API_URL;
@@ -44,12 +50,17 @@ export default {
   name: 'ResetPassword',
   components: {
     Logo,
+    LogoOrca
   },
   mounted() {
     if(localStorage.getItem('key')) {
       this.$router.push('/dashboard');
     }
     this.csrfToken = window.Laravel.csrfToken;
+
+    if(this.$route.query.deliver_at == 'orca'){
+      this.backgroundUrl = './images/background-orca.jpeg'
+    }
   },
   data() {
     return {
@@ -59,6 +70,7 @@ export default {
       loginData: {
         email: '',
       },
+      backgroundUrl: './images/background.jpeg',
     }
   },
   methods: {

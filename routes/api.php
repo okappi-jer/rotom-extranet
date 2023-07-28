@@ -42,6 +42,8 @@ Route::middleware('auth:api')->group(function () {
     Route::post('delivery/store', 'PartijregController@storeDelivery');
     Route::get('delivery/all', 'DeliveryController@index');
     Route::get('delivery/{id}', 'DeliveryController@show');
+
+    Route::post('gatecontrols/store', 'GatecontrolController@store');
 });
 
 

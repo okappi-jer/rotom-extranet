@@ -21,27 +21,32 @@ const History = () => import('./views/history/index.vue');
 
 const Borderels = () => import('./views/borderels/index.vue');
 
+const Gatecontrols = () => import('./views/gatecontrols/index.vue');
+
 
 
 // Routes
 const routes = [
-  { path: '/',                    name: 'Home', component: Dashboard, meta: { requiresLogin: true } },
-  { path: '/dashboard',           name: 'Dashboard', component: Dashboard, meta: { requiresLogin: true } },
-  { path: '/login',               name: 'Login', component: Login },
-  { path: '/reset-wachtwoord',    name: 'ResetPassword', component: ResetPassword },
-  { path: '/nieuw-wachtwoord',    name: 'SetPassword', component: SetPassword },
+  { path: '/',                      name: 'Home', component: Dashboard, meta: { requiresLogin: true } },
+  { path: '/dashboard',             name: 'Dashboard', component: Dashboard, meta: { requiresLogin: true } },
+  { path: '/login',                 name: 'Login', component: Login },
+  { path: '/reset-wachtwoord',      name: 'ResetPassword', component: ResetPassword },
+  { path: '/nieuw-wachtwoord',      name: 'SetPassword', component: SetPassword },
 
-  { path: '/users',               name: 'Contacten', component: Contacten, meta: { requiresLogin: true } },
-  { path: '/users/create',        name: 'ContactenCreate', component: ContactenCreate, meta: { requiresLogin: true } },
-  { path: '/users/edit/:id',      name: 'ContactenEdit', component: ContactenEdit, meta: { requiresLogin: true } },
+  { path: '/users',                 name: 'Contacten', component: Contacten, meta: { requiresLogin: true } },
+  { path: '/users/create',          name: 'ContactenCreate', component: ContactenCreate, meta: { requiresLogin: true } },
+  { path: '/users/edit/:id',        name: 'ContactenEdit', component: ContactenEdit, meta: { requiresLogin: true } },
 
   { path: '/history',               name: 'History', component: History, meta: { requiresLogin: true } },
 
-  { path: '/delivery',               name: 'Delivery', component: Delivery, meta: { requiresLogin: true } },
-  { path: '/delivery/overview',      name: 'DeliveryOverview', component: DeliveryOverview, meta: { requiresLogin: true } },
+  { path: '/delivery',              name: 'Delivery', component: Delivery, meta: { requiresLogin: true } },
+  { path: '/delivery/overview',     name: 'DeliveryOverview', component: DeliveryOverview, meta: { requiresLogin: true } },
   { path: '/delivery/:id',          name: 'DeliveryDetail', component: DeliveryDetail, meta: { requiresLogin: true } },
 
-  { path: '/borderels',               name: 'Contacten', component: Borderels, meta: { requiresLogin: true } },
+  { path: '/borderels',             name: 'Contacten', component: Borderels, meta: { requiresLogin: true } },
+
+  { path: '/gatecontrols',          name: 'GateControls', component: Gatecontrols, meta: { requiresLogin: true } },
+
 
   { path: '*',            name: 'NotFound', component: NotFound }
 ];

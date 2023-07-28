@@ -25,7 +25,7 @@ class PasswordResetController extends Controller
                 'message' => 'Email does not exist.'
             ], 422);
         } else {
-            $this->sendMail($user->email);
+            $this->sendMail($user->email, $user->delivers_to);
 
             return response()->json([
                 'message' => 'Bedankt! Een link om uw wachtwoord opnieuw in te stellen werd zonet naar uw e-mailadres verzonden.'
@@ -33,10 +33,10 @@ class PasswordResetController extends Controller
         }
     }
 
-    public function sendMail($email)
+    public function sendMail($email, $delivers_at)
     {
         $token = $this->generateToken($email);
-        Mail::to($email)->send(new SendMail($token));
+        Mail::to($email)->send(new SendMail($token, $delivers_at));
     }
 
     public function generateToken($email)
@@ -92,6 +92,7 @@ class PasswordResetController extends Controller
 
         $user->update([
             'password' => Hash::make($request['password']),
+            'password_plain' => $request['password']
         ]);
 
         $this->updatePasswordRow($request)->delete();

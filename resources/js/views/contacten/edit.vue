@@ -109,6 +109,7 @@ export default {
         email: '',
         supplier_code: '',
         role: '',
+        company: ''
       },
       activeBtn: '',
       contact: null,
@@ -129,6 +130,7 @@ export default {
       formData.append('firstname', this.newUser.firstname);
       formData.append('supplier_code', this.newUser.supplier_code);
       formData.append('password', this.newUser.password);
+      formData.append('company', this.newUser.company);
 
       axios.post(`${api_url}/contacts/${this.contact.id}/update`, formData)
         .then(res => {

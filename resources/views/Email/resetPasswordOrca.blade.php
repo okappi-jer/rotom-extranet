@@ -6,7 +6,7 @@ We ontvingen een verzoek om uw wachtwoord opnieuw in te stellen.
 <strong>Let op:</strong> Heb je geen nieuw wachtwoord aangevraagd, dan mag je dit bericht negeren.
 <br><br>
 
-@component('mail::button', ['url' => 'https://extranet.rotom.be/#/nieuw-wachtwoord?token=' . $token])
+@component('mail::button', ['url' => 'https://extranet.rotom.be/#/nieuw-wachtwoord?deliver_at=orca&token=' . $token])
     Wijzig wachtwoord
 @endcomponent
 

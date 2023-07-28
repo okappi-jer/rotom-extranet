@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NewUser;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use App\Custom\CreatioComm\CreatioComm;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -56,6 +58,8 @@ class UserController extends Controller
 
         //Create user in Laravel
         if($user){
+            Mail::to($user->email)->send(new NewUser($user));
+
             return response()->json([
                 'contact' => $user,
             ], 200);

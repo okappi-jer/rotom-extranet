@@ -1,0 +1,3 @@
+ID,UniqueId,SupplierCode,UserId,UserName,BTPLArticleCode,BTPLTekst,BTPLVerpakkingsCode,BTPLKaliber,BTPLOrderDeliveryDate,BTPLOrderDeliveryAt,BTPLArticleRemark,BTPLOrderReference,BTPLArticleCollie,BTPLArticleWeight,CreatedAt,UpdatedAt,BTPLLijnnr
+45,BE-DENBERK-853741-230727,BE-DENBERK,1,Jeroen Bartels,,Tomaten,,,2023-07-27,Rotom,,Test met een komma,1,0,2023-07-27T11:45:59.000000Z,2023-07-27T11:45:59.000000Z,
+46,BE-DENBERK-853741-230727,BE-DENBERK,1,Jeroen Bartels,0G0000,Tomaat Snack 4KG Doos Verloren,DVER,DVER4,2023-07-27,Rotom,,Test met een komma,1,0,2023-07-27T11:45:59.000000Z,2023-07-27T11:45:59.000000Z,5

@@ -49,7 +49,7 @@
     watch: {
       article: {
         handler(val){
-          this.article.BTPLArticleWeight = parseInt(val.BTPLArticleCollie) * parseInt(this.template.BTPLTotaalGewicht);
+          this.article.BTPLArticleWeight = parseInt(val.BTPLArticleCollie) * parseFloat(this.template.BTPLTotaalGewicht);
           this.$emit('articleChanged', val);
         },
         deep: true

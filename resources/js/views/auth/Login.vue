@@ -94,7 +94,8 @@
       </div>
 
       <div class="auth-nav">
-        <router-link to="/reset-wachtwoord">Reset wachtwoord</router-link>
+        <router-link v-if="$route.query.deliver_at == 'orca'" to="/reset-wachtwoord?deliver_at=orca">Reset wachtwoord</router-link>
+        <router-link v-else to="/reset-wachtwoord">Reset wachtwoord</router-link>
       </div>
     </div>
   </div>
