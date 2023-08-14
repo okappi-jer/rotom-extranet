@@ -12,12 +12,14 @@ window.Vue = require('vue').default;
 import VueRouter from 'vue-router';
 import wysiwyg from "vue-wysiwyg";
 import axios from 'axios';
+import IdleVue from "idle-vue";
 
 import store from './store';
 import router from './router';
 import filters from './filters';
 
-import { REFRESH_USER } from './constants';
+import { REFRESH_USER, LOGOUT_USER,
+} from './constants';
 
 // axios.defaults.baseURL = process.env.MIX_API_URL;
 
@@ -31,6 +33,13 @@ Vue.use(wysiwyg, {
         "image": true,
     }
 });
+
+Vue.use(IdleVue, {
+    store,
+    idleTime: 600000, // 10 minutes - 1sec = 1000
+    startAtIdle: false,
+});
+
 Vue.use(require('vue-moment'));
 
 // Auto register components
@@ -61,5 +70,19 @@ const app = new Vue({
         if (localStorage.getItem('key')) {
             this.$store.dispatch(REFRESH_USER);
         }
-    }
+    },
+    computed: {
+        isIdle() {
+            return this.$store.state.idleVue.isIdle;
+        },
+    },
+    watch: {
+        isIdle(newVal) {
+            if (localStorage.getItem("key")) {
+                if (newVal) {
+                    this.$store.dispatch(LOGOUT_USER);
+                }
+            }
+        },
+    },
 });

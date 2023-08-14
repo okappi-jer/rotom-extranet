@@ -46,8 +46,8 @@
 
         <div class="form-group-label-wrapper">
           <label for="">Artikel</label>
-          <label for="">Kaliber</label>
-          <label for="">Verpakking</label>
+          <!--<label for="">Kaliber</label>
+          <label for="">Verpakking</label>-->
           <label for="">Aantal collie</label>
           <label for="">Gewicht</label>
           <label for="">Opmerking</label>

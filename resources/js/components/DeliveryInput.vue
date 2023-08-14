@@ -8,12 +8,12 @@
             V $table->text('BTPLArticleCollie');
             V $table->text('BTPLArticleWeight');
     -->
-    <div>
+    <div v-if="article.BTPLLijnnr != 0">
         <div class="delivery-input">
             <!--<input readonly class="read-only" type="text" id="artikelcode" v-model="article.BTPLArtikelCode" placeholder="Artikelcode" />-->
             <input readonly class="read-only" type="text" id="artikelnaam" v-model="article.BTPLTekst" placeholder="Artikelnaam" />
-            <input readonly class="read-only" type="text" id="artikelkaliber" v-model="article.BTPLKaliber" placeholder="Artikelkaliber" />
-            <input readonly class="read-only" type="text" id="artikelverpakking" v-model="article.BTPLVerpakkingsCode" placeholder="Artikelverpakking" />
+            <!--<input readonly class="read-only" type="text" id="artikelkaliber" v-model="article.BTPLKaliber" placeholder="Artikelkaliber" />-->
+            <!--<input readonly class="read-only" type="text" id="artikelverpakking" v-model="article.BTPLVerpakkingsCode" placeholder="Artikelverpakking" />-->
             <input type="number" id="collie" placeholder="# collie" v-model="article.BTPLArticleCollie"/>
             <input readonly class="read-only" type="text" id="gewicht" placeholder="Totale gewicht" v-model="article.BTPLArticleWeight" />
             <input type="text" id="remark" placeholder="Opmerking" v-model="article.BTPLArticleRemark"/>

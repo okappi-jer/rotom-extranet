@@ -191,12 +191,16 @@ button {
     border-radius: 5px;
   }
 
+  .form-group-wrapper{
+    overflow-x: scroll;
+  }
+
   .form-group-wrapper .delivery-input,
   .form-group-label-wrapper
   {
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     grid-gap: 5px;
     margin-bottom: 5px;
     padding-bottom: 5px;

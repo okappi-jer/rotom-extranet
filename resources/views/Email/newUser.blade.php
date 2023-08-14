@@ -7,7 +7,7 @@ Wij hebben u toegang gegeven tot het extranet van {{ $user->delivers_to }}. U ka
 <strong>Wachtwoord: </strong>{{ $user->password_plain }}
 <br><br>
 
-@component('mail::button', ['url' => 'https://extranet.rotom.be/?delivers_at' . $user->delivers_to])
+@component('mail::button', ['url' => 'https://extranet.rotom-tomatoes.com/?delivers_at' . $user->delivers_to])
     Ga naar het extranet
 @endcomponent
 
