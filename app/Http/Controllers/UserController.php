@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\NewUser;
+use App\Models\Lotnumber;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -20,7 +21,18 @@ class UserController extends Controller
         $users = User::get();
 
         return response()->json([
-            'data' => $users
+            'data' => $users,
+        ], 200);
+    }
+
+    public function getLotnumberInfo()
+    {
+        $last_lotnumber = Lotnumber::latest()->first();
+        $new_lotnumber = str_replace('E', '', $last_lotnumber->lotnumber) + 1;
+
+        return response()->json([
+            'last_lotnumber' => $last_lotnumber->lotnumber,
+            'new_lotnumber' => 'E' . $new_lotnumber
         ], 200);
     }
 
@@ -44,6 +56,14 @@ class UserController extends Controller
             'delivers_to'=> ['required', 'max: 256'],
         ]);
 
+        //Update lotnumber
+        $last_lotnumber = Lotnumber::latest()->first();
+        $new_lotnumber = str_replace('E', '', $last_lotnumber->lotnumber) + 1;
+
+        Lotnumber::create([
+            'lotnumber' => 'E' . $new_lotnumber,
+        ]);
+
         $user =  User::create([
             'name' => $request['name'],
             'firstname' => $request['firstname'],
@@ -54,11 +74,12 @@ class UserController extends Controller
             'supplier_code' => $request['supplier_code'],
             'company' => $request['company'],
             'delivers_to' => $request['delivers_to'],
+            'lotnumber' => 'E' . $new_lotnumber,
         ]);
 
         //Create user in Laravel
         if($user){
-            Mail::to($user->email)->send(new NewUser($user));
+            //Mail::to($user->email)->send(new NewUser($user));
 
             return response()->json([
                 'contact' => $user,
@@ -105,7 +126,7 @@ class UserController extends Controller
                     'firstname' => 'required',
                     'supplier_code' => ['required', 'max: 256'],
                     'password' => ['required', 'max: 256'],
-                    'company' => $request['company'],
+                    'company' => ['required', 'max: 256'],
                 ]);
 
                 $user->update([

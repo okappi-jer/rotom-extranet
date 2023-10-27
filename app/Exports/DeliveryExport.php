@@ -46,7 +46,8 @@ class DeliveryExport implements FromQuery, WithHeadings, WithCustomCsvSettings
             "BTPLArticleWeight",
             "CreatedAt",
             "UpdatedAt",
-            "BTPLLijnnr"
+            "BTPLLijnnr",
+            "Lotnummer",
         ];
     }
 

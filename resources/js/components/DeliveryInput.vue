@@ -15,7 +15,7 @@
             <!--<input readonly class="read-only" type="text" id="artikelkaliber" v-model="article.BTPLKaliber" placeholder="Artikelkaliber" />-->
             <!--<input readonly class="read-only" type="text" id="artikelverpakking" v-model="article.BTPLVerpakkingsCode" placeholder="Artikelverpakking" />-->
             <input type="number" id="collie" placeholder="# collie" v-model="article.BTPLArticleCollie"/>
-            <input readonly class="read-only" type="text" id="gewicht" placeholder="Totale gewicht" v-model="article.BTPLArticleWeight" />
+            <input type="text" id="gewicht" placeholder="Totale gewicht" v-model="article.BTPLArticleWeight" />
             <input type="text" id="remark" placeholder="Opmerking" v-model="article.BTPLArticleRemark"/>
         </div>
     </div>
@@ -49,7 +49,10 @@
     watch: {
       article: {
         handler(val){
-          this.article.BTPLArticleWeight = parseInt(val.BTPLArticleCollie) * parseFloat(this.template.BTPLTotaalGewicht);
+          if(parseFloat(this.template.BTPLEenhVerpak) !== 0){
+            this.article.BTPLArticleWeight = parseInt(val.BTPLArticleCollie) * parseFloat(this.template.BTPLEenhVerpak);
+          }
+
           this.$emit('articleChanged', val);
         },
         deep: true

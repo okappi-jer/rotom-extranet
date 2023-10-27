@@ -24,6 +24,7 @@ class Delivery extends Model
         'BTPLOrderDeliveryAt',
         'BTPLArticleRemark',
         'BTPLOrderReference',
-        'BTPLLijnnr'
+        'BTPLLijnnr',
+        'lotnumber'
     ];
 }

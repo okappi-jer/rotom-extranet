@@ -16,7 +16,7 @@
             </div>
 
             <div class="info">
-                Welkom, <strong>{{ user.firstname }} {{ user.name }}</strong>
+                Welkom, <strong>{{ user.firstname }} {{ user.name }}</strong> <span class="lotnumber">Lotnummer: {{ user.lotnumber }}</span>
             </div>
         </div>
 

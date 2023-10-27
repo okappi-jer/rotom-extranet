@@ -3,6 +3,7 @@ export const LOGIN_USER = "LOGIN_USER";
 export const LOGOUT_USER = "LOGOUT_USER";
 export const SET_AUTH_ERRORS = "SET_AUTH_ERRORS";
 export const REFRESH_USER = "REFRESH_USER";
+export const UPDATE_USER = "UPDATE_USER";
 
 // APP STORE
 export const IS_LOADING = "IS_LOADING";

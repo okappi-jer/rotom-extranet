@@ -39,6 +39,22 @@
   margin-bottom: 15px;
 }
 
+.notification-lotnumber{
+  background-color: $background-light;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 25px;
+
+  p{
+    margin-bottom: 0;
+
+    strong{
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+}
+
 .modal--popup {
   position: fixed;
   display: block;

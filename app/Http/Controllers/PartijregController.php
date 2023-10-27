@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Exports\DeliveryExport;
+use App\Mail\SendCsv;
 use App\Models\Delivery;
+use App\Models\Lotnumber;
 use App\Models\Template;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -99,14 +101,29 @@ class PartijregController extends Controller
                     'BTPLArticleRemark' => str_replace(';', ' ', $item->BTPLArticleRemark),
                     'BTPLOrderReference' => $request['reference'],
                     'BTPLLijnnr' => $item->BTPLLijnnr,
+                    'lotnumber' => \Auth::user()->lotnumber,
                 ]);
             }
         }
 
         $csv = Excel::store(new DeliveryExport($delivery_id), $delivery_id .'.csv', 'excel');
+        \Mail::to(ENV('MAIL_CSV_ADDRESS'))->send(new SendCsv($delivery_id));
+
+        //Update lotnumber
+        $last_lotnumber = Lotnumber::latest()->first();
+        $new_lotnumber = str_replace('E', '', $last_lotnumber->lotnumber) + 1;
+
+        Lotnumber::create([
+            'lotnumber' => 'E' . $new_lotnumber,
+        ]);
+
+        $user->update([
+            'lotnumber' => 'E' . $new_lotnumber,
+        ]);
 
         return response()->json([
             'delivery_id' => $delivery_id,
+            'lotnumber' => 'E' . $new_lotnumber,
         ], 200);
 
     }

@@ -6,6 +6,7 @@ import {
   LOGOUT_USER,
   SET_AUTH_ERRORS,
   REFRESH_USER,
+  UPDATE_USER,
 } from '../../constants';
 
 const api_url = process.env.MIX_API_URL;
@@ -84,6 +85,10 @@ const actions = {
       commit(SET_AUTH_ERRORS, err.response.data.errors);
     });
   },
+  [UPDATE_USER]({ commit }, payload) {
+    const lotnumber = payload;
+    commit(UPDATE_USER, lotnumber);
+  },
 };
 
 const mutations = {
@@ -98,6 +103,9 @@ const mutations = {
     localStorage.removeItem('key');
     state.user = null;
     router.push('/login');
+  },
+  [UPDATE_USER](state, payload) {
+    state.user.lotnumber = payload;
   },
 };
 

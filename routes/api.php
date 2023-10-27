@@ -31,6 +31,7 @@ Route::middleware('auth:api')->group(function () {
     Route::get('dashboard/{guid}', 'HomeController@dashboard');
 
     Route::post('contacts/store', 'UserController@store');
+    Route::get('contacts/get-lotnumber-info', 'UserController@getLotnumberInfo');
     Route::get('contacts/{guid}', 'UserController@index');
     Route::post('contacts/{guid}/update', 'UserController@update');
     Route::post('contacts/{guid}/delete', 'UserController@delete');
@@ -44,6 +45,8 @@ Route::middleware('auth:api')->group(function () {
     Route::get('delivery/{id}', 'DeliveryController@show');
 
     Route::post('gatecontrols/store', 'GatecontrolController@store');
+
+
 });
 
 

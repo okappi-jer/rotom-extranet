@@ -17,7 +17,7 @@
                 {{ successMessage }}
             </div>
 
-            <form v-if="count != 0" class="template-form" @submit.prevent="handleSubmit">
+            <form class="template-form" @submit.prevent="handleSubmit">
                 <div class="form-group-wrapper">
                     <div class="form-group">
                         <label for="file">Excel met codes</label>

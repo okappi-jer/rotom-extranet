@@ -28,7 +28,7 @@
             V $table->text('BTPLOrderReference');
       -->
 
-      <form v-if="count != 0" class="template-form" @submit.prevent="handleSubmit">
+      <form v-if="count != 0 && !success" class="template-form" @submit.prevent="handleSubmit">
         <div class="form-group-wrapper highlighted">
           <div class="form-group">
             <label for="deliverydate">Leveringsdatum</label>
@@ -55,7 +55,7 @@
 
         <div class="form-group-wrapper">
           <DeliveryInput v-for="(template, index) in templates" :key="'template-' + index" :template="template" @articleChanged="editArticle"></DeliveryInput>
-          <button type="submit" class="btn-blue">Meld levering aan</button>
+          <button :disabled="disable" type="submit" class="btn-blue">Meld levering aan</button>
         </div>
       </form>
     </div>
@@ -66,6 +66,8 @@
 import { VueGoodTable } from 'vue-good-table';
 import axios from "axios";
 import DeliveryInput from "../../components/DeliveryInput";
+import {GET_CONTACTS} from "../../constants";
+import {UPDATE_USER} from "../../constants";
 
 const api_url = process.env.MIX_API_URL;
 
@@ -89,7 +91,8 @@ export default {
       success: false,
       error: false,
       successMessage: 'De levering werd met succes ingegeven',
-      errorMessage: 'Er ging iets mis, neem contact op met Rotom'
+      errorMessage: 'Er ging iets mis, neem contact op met Rotom',
+      disable: false,
     }
   },
   computed: {
@@ -113,6 +116,7 @@ export default {
     handleSubmit(){
       this.success = false;
       this.error = false;
+      this.disable = true;
 
       let formData = new FormData();
       formData.append('delivery', JSON.stringify(this.delivery));
@@ -121,9 +125,14 @@ export default {
       axios.post(`${api_url}/delivery/store`, formData)
         .then(res => {
           this.success = true;
+          this.$store.dispatch(GET_CONTACTS);
+          this.$store.dispatch(UPDATE_USER, res.data.lotnumber);
+          this.disable = false;
         })
         .catch(err => {
           this.error = true;
+          this.disable = false;
+
         });
     },
     editArticle(newVal){
