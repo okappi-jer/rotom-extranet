@@ -14,7 +14,13 @@ class DeliveryController extends Controller
      */
     public function index()
     {
-        $deliveries = Delivery::where('supplier_code', \Auth::user()->supplier_code)->select('unique_id', 'created_at')->distinct()->get();
+        $user = \Auth::user();
+
+        if($user->role == 'Admin' || $user->role == 'DeliveryAdmin'){
+            $deliveries = Delivery::select('unique_id', 'lotnumber', 'created_at')->orderBy('created_at', 'desc')->distinct()->get();
+        }else{
+            $deliveries = Delivery::where('supplier_code', $user->supplier_code)->select('unique_id', 'lotnumber', 'created_at')->orderBy('created_at', 'desc')->distinct()->get();
+        }
 
         return response()->json([
             'data' => $deliveries

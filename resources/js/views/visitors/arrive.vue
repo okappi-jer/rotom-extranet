@@ -86,7 +86,10 @@
             <span class="close-btn" v-if="lang=='en'" @click="showModal=false">Close conditions</span>
             <span class="close-btn" v-if="lang=='fr'" @click="showModal=false">Fermer conditions</span>
 
-            <iframe title="Conditions" src="modal.pdf" frameborder="1" scrolling="auto" width="100%" height="600px" ></iframe>
+            <iframe v-if="lang=='nl'" title="Conditions" src="modal_nl.pdf" frameborder="1" scrolling="auto" width="100%" height="600px" ></iframe>
+            <iframe v-if="lang=='en'" title="Conditions" src="modal_en.pdf" frameborder="1" scrolling="auto" width="100%" height="600px" ></iframe>
+            <iframe v-if="lang=='fr'" title="Conditions" src="modal_fr.pdf" frameborder="1" scrolling="auto" width="100%" height="600px" ></iframe>
+
           </div>
 
           <div class="restart-container">

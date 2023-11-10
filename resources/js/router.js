@@ -34,6 +34,10 @@ const VisitorsDepart = () => import('./views/visitors/depart.vue');
 
 const KotkStart = () => import('./views/kotk/start.vue');
 
+const Yuki = () => import('./views/yuki/start.vue');
+const OpenDebitors = () => import('./views/yuki/opendebitors.vue');
+const Invoices = () => import('./views/yuki/invoices.vue');
+
 // Routes
 const routes = [
   { path: '/',                      name: 'Home', component: Dashboard, meta: { requiresLogin: true } },
@@ -63,11 +67,15 @@ const routes = [
 
   { path: '/gatecontrols',          name: 'GateControls', component: Gatecontrols, meta: { requiresLogin: true } },
 
-  { path: '/employees',              name: 'Employees', component: Employees, meta: { requiresLogin: true } },
-  { path: '/employees/create',         name: 'EmployeesCreate', component: EmployeesCreate, meta: { requiresLogin: true } },
-  { path: '/employees/edit/:id',        name: 'EmployeesEdit', component: EmployeesEdit, meta: { requiresLogin: true } },
+  { path: '/employees',             name: 'Employees', component: Employees, meta: { requiresLogin: true } },
+  { path: '/employees/create',      name: 'EmployeesCreate', component: EmployeesCreate, meta: { requiresLogin: true } },
+{ path: '/employees/edit/:id',      name: 'EmployeesEdit', component: EmployeesEdit, meta: { requiresLogin: true } },
 
-  { path: '*',            name: 'NotFound', component: NotFound }
+  { path: '/yuki',                  name: 'Yuki', component: Yuki, meta: { requiresLogin: true } },
+  { path: '/yuki/open-debitors',    name: 'OpenDebitors', component: OpenDebitors, meta: { requiresLogin: true } },
+  { path: '/yuki/invoices',         name: 'Invoices', component: Invoices, meta: { requiresLogin: true } },
+
+  { path: '*',                      name: 'NotFound', component: NotFound }
 ];
 
 const router = new VueRouter({

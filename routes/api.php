@@ -61,4 +61,12 @@ Route::middleware('auth:api')->group(function () {
 
 Route::get('visitors/cron/close', 'VisitorController@closeAll');
 
+Route::get('yuki/authenticate/{apikey}', 'YukiController@authenticateWithYuki');
+Route::post('yuki/get-outstanding-debitors', 'YukiController@getOutstandingDebitors');
+Route::post('yuki/get-invoices', 'YukiController@getInvoices');
+Route::get('yuki/get-administration-id', 'YukiController@getAdministrationId');
+Route::get('yuki/show-outstanding-debitors', 'YukiController@showOutstandingDebitors');
+Route::get('yuki/show-invoices', 'YukiController@showInvoices');
 
+Route::get('yuki/sync-invoices', 'YukiController@syncInvoices');
+Route::get('yuki/sync-outstanding-debitors', 'YukiController@syncOutstandingDebitors');

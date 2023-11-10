@@ -24,6 +24,14 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        // 04:00 Brussels time daily
+        $schedule->command('outstandings:fetch')
+            ->dailyAt('09:15')
+            ->withoutOverlapping()
+            ->onOneServer()
+            ->runInBackground()
+            ->timezone('Europe/Brussels');
+
         $schedule->command('queue:work --stop-when-empty')
             ->everyMinute()
             ->withoutOverlapping();

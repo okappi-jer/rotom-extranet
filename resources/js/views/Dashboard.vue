@@ -1,6 +1,6 @@
 <template>
   <div class="view--dashboard">
-      <div class="quick--actions" v-if="$store.getters.getUser.role !== 'Visitor'">
+      <div class="quick--actions" v-if="$store.getters.getUser.role !== 'Visitor' && $store.getters.getUser.role !== 'DeliveryAdmin'">
           <div class="status-panel attention">
               <a href="/#/delivery">
                 <span class="big">
@@ -33,6 +33,16 @@
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
                 </span>
                   <small>Bezoekersregister</small>
+              </a>
+          </div>
+      </div>
+      <div class="quick--actions" v-if="$store.getters.getUser.role === 'DeliveryAdmin'">
+        <div class="status-panel attention">
+              <a href="/#/delivery/overview">
+                <span class="big">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" /></svg>
+                </span>
+                <small>Overzicht Leveringen</small>
               </a>
           </div>
       </div>

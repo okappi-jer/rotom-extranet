@@ -73,3 +73,89 @@
     outline: none;
   }
 }
+
+#yuki{
+  .vgt-responsive{
+    padding: 0 $dist-s;
+  }
+
+  .footer__row-count{
+    //display: none;
+  }
+
+  .footer__navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    background-color: $background-light;
+    margin-top: $dist-s;
+
+    .footer__navigation__info{
+      padding: $dist-xs;
+    }
+  }
+}
+
+/* ===== Vue Good Table - Pagination Styling ===== */
+
+/* Footer container */
+.vgt-wrap__footer {
+  background: $background-light; 
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-top: 15px;
+}
+
+/* Rows per page selector text */
+.vgt-wrap__footer .footer__row-count {
+  font-size: 0.875rem;
+  color: $black
+}
+
+/* Pagination navigation container */
+.vgt-wrap__footer .footer__navigation {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+}
+
+/* Pagination buttons */
+.vgt-wrap__footer .footer__navigation button {
+  background: $white;
+  border: 1px solid $black;
+  border-radius: 6px;
+  padding: 0.25rem 0.6rem;
+  margin: 0;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap; 
+}
+
+/* Disabled state */
+.vgt-wrap__footer .footer__navigation button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Active page button */
+.vgt-wrap__footer .footer__navigation button.active {
+  background: $primary-color; /* blue */
+  color: white;
+  border-color: $primary-color;
+}
+
+/* Optional: Make Prev/Next smaller arrows */
+.vgt-wrap__footer .footer__navigation button.prev:before {
+  content: "←";
+  margin-right: 8px;
+}
+
+.vgt-wrap__footer .footer__navigation button.next:after {
+  content: "→";
+  margin-left: 8px;
+}

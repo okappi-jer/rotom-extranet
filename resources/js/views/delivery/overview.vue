@@ -13,6 +13,14 @@
             <vue-good-table
                     :columns="columns"
                     :rows="deliveries"
+                    :search-options="{
+                      enabled: true,
+                      placeholder: 'Zoek leveringen...',
+                    }"
+                    :pagination-options="{
+                      enabled: true, 
+                      perPage: 20,
+                    }"
                     v-if="deliveries"
                     styleClass="table vgt-responsive">
 
@@ -21,6 +29,9 @@
                     <span class="block">
                       <router-link :to="`/delivery/${props.row.unique_id}`">{{ props.row.unique_id }}</router-link>
                     </span>
+                  </span>
+                   <span v-if="props.column.field == 'lotnumber'">
+                    <span class="block">{{ props.row.lotnumber }}</span>
                   </span>
                   <span v-if="props.column.field == 'created_at'">
                     <span class="block">{{ props.row.created_at }}</span>
@@ -50,6 +61,7 @@
       return {
         columns: [
           { label: 'ID Levering', field: 'unique_id' },
+          { label: 'Lotnummer', field: 'lotnumber' },
           { label: 'Creatiedatum', field: 'created_at' },
         ],
         deliveries: null,

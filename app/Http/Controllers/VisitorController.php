@@ -52,7 +52,6 @@ class VisitorController extends Controller
             'conditions' => ['required', 'max: 4'],
         ]);
 
-        
         $visitor =  Visitor::create([
             'name' => $request['name'],
             'firstname' => $request['firstname'],
@@ -67,7 +66,8 @@ class VisitorController extends Controller
 
         if($visitor && $employee){
             $twilioSid = "AC070fd130a6e05dc792a38b4af3033182";
-            $twilioToken = "64053dc1f547d63965290d341dd5d172";
+            //$twilioToken = "64053dc1f547d63965290d341dd5d172";
+            $twilioToken = "6017ef3a7bc68b58d3d76e0d381d2c0f";
             $twilioWhatsAppNumber = "+14846528334";
             $recipientNumber = $employee->mobile; 
             $message = "Hallo, " . $request['firstname'] . " " . $request['name'] . " van " . $request['company'] . " is aangekomen 🚀";
@@ -87,6 +87,8 @@ class VisitorController extends Controller
                     'visitor' => $visitor,
                 ], 200);
             } catch (\Exception $e) {
+                \Log::info($e);
+
                 return response()->json([
                     'data' => "Er ging iets mis, probeer later even opnieuw!"
                 ], 400);            
