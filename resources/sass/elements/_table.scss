@@ -9,6 +9,10 @@
   }
 }
 
+.sr-only{
+  display: none !important;
+}
+
 .table {
   width: 100%;
   font-size: 14px;
@@ -18,6 +22,10 @@
     padding: 5px 0px;
     cursor: pointer;
     text-align: left;
+
+    button{
+      display: none !important;
+    }
   }
   td {
     padding: 10px 0;

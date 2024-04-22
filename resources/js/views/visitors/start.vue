@@ -6,9 +6,9 @@
           </div>
   
           <div class="language-block" v-if="!language">
-            <span class="link" @click="setLanguage('nl')">Nederlands</span>
-            <span class="link" @click="setLanguage('fr')">Français</span>
-            <span class="link" @click="setLanguage('en')">English</span>
+            <span class="link" @click="setLanguage('nl')">Registreer je bezoek</span>
+            <span class="link" @click="setLanguage('fr')">Enregistrez votre visite</span>
+            <span class="link" @click="setLanguage('en')">Register your visit</span>
           </div>
 
           <div class="selection-block" v-if="language">

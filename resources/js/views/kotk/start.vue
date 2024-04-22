@@ -12,6 +12,7 @@
             <a class="big-button" href="./gpx/4-5km.gpx" download>Wandeling - 4,5km</a>
             <a class="big-button" href="./gpx/08km.gpx" download>Wandeling - 8km</a>
             <a class="big-button" href="./gpx/11km.gpx" download>Wandeling - 11km</a>
+            <a class="big-button" href="./gpx/29km.gpx" download>Fiets - 29km</a>
             <a class="big-button" href="./gpx/11km.gpx" download>Fiets - 60km</a>
           </div>
         </div>
