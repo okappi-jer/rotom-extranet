@@ -16,3 +16,5 @@ export const GET_DASHBOARD = "GET_DASHBOARD";
 export const GET_ACCOUNT = "GET_ACCOUNT";
 export const GET_CONTACTS = "GET_CONTACTS";
 export const GET_DELIVERIES = "GET_DELIVERIES";
+export const GET_EMPLOYEES = "GET_EMPLOYEES";
+export const GET_VISITORS = "GET_VISITORS";

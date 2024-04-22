@@ -27,6 +27,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('employees', 'EmployeeController@index');
+Route::post('visitors/arrive', 'VisitorController@arrive');
+Route::post('visitors/depart', 'VisitorController@depart');
+
 Route::middleware('auth:api')->group(function () {
     Route::get('dashboard/{guid}', 'HomeController@dashboard');
 
@@ -46,7 +50,15 @@ Route::middleware('auth:api')->group(function () {
 
     Route::post('gatecontrols/store', 'GatecontrolController@store');
 
+    Route::post('employees/store', 'EmployeeController@store');
+    Route::post('employees/{guid}/update', 'EmployeeController@update');
+    Route::post('employees/{guid}/delete', 'EmployeeController@delete');
+
+    Route::get('visitors', 'VisitorController@index');
+    Route::post('visitors/closeAll', 'VisitorController@closeAll');
 
 });
+
+Route::get('visitors/cron/close', 'VisitorController@closeAll');
 
 

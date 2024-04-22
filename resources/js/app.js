@@ -13,6 +13,8 @@ import VueRouter from 'vue-router';
 import wysiwyg from "vue-wysiwyg";
 import axios from 'axios';
 import IdleVue from "idle-vue";
+import VueMoment from 'vue-moment'
+import moment from 'moment-timezone'
 
 import store from './store';
 import router from './router';
@@ -34,13 +36,17 @@ Vue.use(wysiwyg, {
     }
 });
 
+Vue.use(VueMoment, {
+    moment,
+})
+
 Vue.use(IdleVue, {
     store,
     idleTime: 600000, // 10 minutes - 1sec = 1000
     startAtIdle: false,
 });
 
-Vue.use(require('vue-moment'));
+//Vue.use(require('vue-moment'));
 
 // Auto register components
 const files = require.context('./', true, /\.vue$/i)

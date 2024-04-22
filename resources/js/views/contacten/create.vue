@@ -56,6 +56,7 @@
             <select name="role" id="role" v-model="newUser.role">
               <option value="User">User</option>
               <option value="Admin">Admin</option>
+              <option value="Visitor">Visitor Admin</option>
             </select>
           </div>
           <div class="form-group half">

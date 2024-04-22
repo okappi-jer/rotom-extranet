@@ -23,7 +23,16 @@ const Borderels = () => import('./views/borderels/index.vue');
 
 const Gatecontrols = () => import('./views/gatecontrols/index.vue');
 
+const Employees = () => import('./views/employees/index.vue');
+const EmployeesCreate = () => import('./views/employees/create.vue');
+const EmployeesEdit = () => import('./views/employees/edit.vue');
 
+const Visitors = () => import('./views/visitors/index.vue');
+const VisitorsStart = () => import('./views/visitors/start.vue');
+const VisitorsArrive = () => import('./views/visitors/arrive.vue');
+const VisitorsDepart = () => import('./views/visitors/depart.vue');
+
+const KotkStart = () => import('./views/kotk/start.vue');
 
 // Routes
 const routes = [
@@ -32,6 +41,13 @@ const routes = [
   { path: '/login',                 name: 'Login', component: Login },
   { path: '/reset-wachtwoord',      name: 'ResetPassword', component: ResetPassword },
   { path: '/nieuw-wachtwoord',      name: 'SetPassword', component: SetPassword },
+
+  { path: '/visitors',              name: 'Visitors', component: Visitors, meta: { requiresLogin: true } },
+  { path: '/visitors/start',        name: 'VisitorsStart', component: VisitorsStart },
+  { path: '/visitors/arrive',       name: 'VisitorsArrive', component: VisitorsArrive },
+  { path: '/visitors/departure',    name: 'VisitorsDepart', component: VisitorsDepart },
+
+  { path: '/kotk/start',            name: 'KotkStart', component: KotkStart },
 
   { path: '/users',                 name: 'Contacten', component: Contacten, meta: { requiresLogin: true } },
   { path: '/users/create',          name: 'ContactenCreate', component: ContactenCreate, meta: { requiresLogin: true } },
@@ -47,6 +63,9 @@ const routes = [
 
   { path: '/gatecontrols',          name: 'GateControls', component: Gatecontrols, meta: { requiresLogin: true } },
 
+  { path: '/employees',              name: 'Employees', component: Employees, meta: { requiresLogin: true } },
+  { path: '/employees/create',         name: 'EmployeesCreate', component: EmployeesCreate, meta: { requiresLogin: true } },
+  { path: '/employees/edit/:id',        name: 'EmployeesEdit', component: EmployeesEdit, meta: { requiresLogin: true } },
 
   { path: '*',            name: 'NotFound', component: NotFound }
 ];

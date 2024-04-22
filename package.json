@@ -23,6 +23,7 @@
     },
     "dependencies": {
         "idle-vue": "^2.0.5",
+        "moment-timezone": "^0.5.45",
         "vue": "^2.6.12",
         "vue-good-table": "^2.21.1",
         "vue-moment": "^4.1.0",

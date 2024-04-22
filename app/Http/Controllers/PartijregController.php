@@ -62,7 +62,11 @@ class PartijregController extends Controller
     }
 
     public function getTemplates(){
-        $templates = Template::where('BTPLLeverCode', \Auth::user()->supplier_code)->get();
+        $templates = Template
+            ::where('BTPLLeverCode', \Auth::user()->supplier_code)
+            ->where('BTPActief', 1)
+            ->get();
+            
         $count = count($templates);
 
         return response()->json([

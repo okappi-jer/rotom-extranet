@@ -1,13 +1,13 @@
 #modal {
     position: fixed;
-    max-width: 400px;
-    max-height: calc(100vh - 30vh);
+    max-width: 600px;
+    max-height: calc(100vh - 20vh);
     width: 100%;
     z-index: 100;
     // border: 1px solid $black;
     background: $white;
     padding: 20px;
-    top: 20vh;
+    top: 10vh;
     // bottom: 20vh;
     overflow-y: scroll;
     left: 50%;
@@ -17,6 +17,10 @@
     &.modal-default {
       width: calc(100% - 40px);
       max-width: 1200px;
+    }
+
+    iframe{
+      max-width: 100% !important;
     }
 
     .modal-header {
@@ -83,4 +87,13 @@
       transform: scale(1);
     }
   }
+}
+
+.close-btn{
+  background-color: $primary-color;
+  padding: $dist-xs;
+  color: $white;
+  text-align: center;
+  display: block;
+  margin-bottom: $dist-s;
 }

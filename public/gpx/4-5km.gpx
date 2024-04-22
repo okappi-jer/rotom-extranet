@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<gpx version="1.1" creator="OsmAndRouterV2" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>KOTK 2024 april 28 - 4,5km</name>
+  </metadata>
+  <trk>
+    <name>KOTK 2024 april 28 - 4,5km</name>
+    <trkseg>
+      <trkpt lat="51.0758875" lon="4.5896797" />
+      <trkpt lat="51.0733364" lon="4.5906379" />
+      <trkpt lat="51.0725673" lon="4.586771" />
+      <trkpt lat="51.0735986" lon="4.5862353" />
+      <trkpt lat="51.0734009" lon="4.5850152" />
+      <trkpt lat="51.0770605" lon="4.5838414" />
+      <trkpt lat="51.0770822" lon="4.5838043" />
+      <trkpt lat="51.0763182" lon="4.5823836" />
+      <trkpt lat="51.0769538" lon="4.5818562" />
+      <trkpt lat="51.0776279" lon="4.5816349" />
+      <trkpt lat="51.0782662" lon="4.5809584" />
+      <trkpt lat="51.0800248" lon="4.5807773" />
+      <trkpt lat="51.0800523" lon="4.5788718" />
+      <trkpt lat="51.0801185" lon="4.5784924" />
+      <trkpt lat="51.0804485" lon="4.5777489" />
+      <trkpt lat="51.0808462" lon="4.5774485" />
+      <trkpt lat="51.0802437" lon="4.5762771" />
+      <trkpt lat="51.0831493" lon="4.5747058" />
+      <trkpt lat="51.0839355" lon="4.574972" />
+      <trkpt lat="51.0828396" lon="4.5772105" />
+      <trkpt lat="51.0825544" lon="4.5778837" />
+      <trkpt lat="51.0821269" lon="4.5798531" />
+      <trkpt lat="51.0815874" lon="4.5795029" />
+      <trkpt lat="51.0815007" lon="4.5805773" />
+      <trkpt lat="51.0812172" lon="4.5818086" />
+      <trkpt lat="51.0809814" lon="4.5832768" />
+      <trkpt lat="51.0798191" lon="4.5837214" />
+      <trkpt lat="51.0799032" lon="4.5840411" />
+      <trkpt lat="51.0799825" lon="4.5846757" />
+      <trkpt lat="51.0792501" lon="4.585064" />
+      <trkpt lat="51.0783976" lon="4.5859342" />
+      <trkpt lat="51.0795824" lon="4.5895052" />
+      <trkpt lat="51.0765192" lon="4.5919413" />
+      <trkpt lat="51.076239" lon="4.5914181" />
+      <trkpt lat="51.075981" lon="4.5897221" />
+    </trkseg>
+  </trk>
+</gpx>

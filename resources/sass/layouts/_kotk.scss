@@ -1,0 +1,19 @@
+.gpx-block{
+    margin-top: $dist-m;
+
+    p{
+        text-align: center;
+        margin-bottom: $dist-m;
+        font-weight: bold;
+    }
+}
+
+.big-button{
+    background-color: $primary-color;
+    color: $white;
+    padding: $dist-s;
+    display: block;
+    width: 90%;
+    margin: 0 auto $dist-s auto;
+    text-align: center;
+}

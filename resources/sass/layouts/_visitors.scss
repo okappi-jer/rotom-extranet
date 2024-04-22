@@ -1,0 +1,50 @@
+.language-block{
+    margin-top: $dist-l;
+    display: flex;
+    justify-content: space-between;
+
+    .link{
+        background-color: $primary-color;
+        width: 30%;
+        padding: $dist-l;
+        color: white;
+        text-align: center;
+    }
+}
+
+.selection-block{
+    margin-top: $dist-l;
+    display: flex;
+    justify-content: center;
+
+    .link{
+        background-color: $primary-color;
+        width: 30%;
+        padding: $dist-l;
+        color: white;
+        text-align: center;
+        margin-right: $dist-s;
+    }
+
+    .inverse{
+        background-color: $secondary-color;
+        margin-left: $dist-s;
+    }
+}
+
+.arrival-form-container{
+    .notification-error{
+        margin-top: $dist-m;
+    }
+}
+
+.restart-container{
+    padding-top: $dist-l;
+    text-align: right;
+}
+
+.btn-restart{
+    background-color: $primary-color;
+    color: $white;
+    padding: $dist-xs;
+}
